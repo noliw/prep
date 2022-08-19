@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Dog World</h1>
+{% for dog in dog_list %}
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{ dog.name }}</td>
+        <td>{{ dog.breed }}</td>
+        <td>
+            <form action="{% url 'dog_delete' dog.id %}" method="POST" class="ignore-top-margin">
+                {% csrf_token %}
+                <button type="submit" class="pure-button">X</button>
+            </form>
+        </td>
+    </tr>
+</table>
+{% empty %}
+<h3>No Dogs exist</h3>
+{% endfor %}
+<br>
+<a href="{% url 'dog_create' %}" class="pure-button">ADD</a>
+
+
+{% endblock %}

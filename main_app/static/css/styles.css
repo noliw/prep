@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+form:not(.ignore-top-margin) {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.5rem;
+}

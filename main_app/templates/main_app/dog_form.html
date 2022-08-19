@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Add Dog</h1>
+<a href="{% url 'dog_list' %}">CANCEL</a>
+
+<form action="" method="POST" class="pure-form">
+    {% csrf_token %}
+
+    {{ form }}
+    <span></span>
+    <button type="submit">ADD DOG</button>
+
+</form>
+
+{% endblock %}
